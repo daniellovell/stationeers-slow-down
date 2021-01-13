@@ -23,7 +23,7 @@ Completed features
  2. Run Stationeers once to complete the BepInEx installation
  3. Install ``SlowDown.dll`` to the Stationeers/BepInEx/plugins folder
  4. Run Stationeers once to generate the config file
- 5. Change the config to your liking in /Stationeers/BepInEx/config/com.dl.deepmine.cfg
+ 5. Change the config to your liking in /Stationeers/BepInEx/config/SlowDown.cfg
 
 ### Contributions
 
