@@ -7,7 +7,9 @@ This is a mod for Stationeers that provides players with a "walk" key - Left Con
 ### Features
 
 Completed features
- - :heavy_check_mark: Allow users to slow down using a key and speed of their choice(configurable)
+ - :heavy_check_mark: Allow users to slow down using a key and speed of their choice (LeftControl by default, configurable)
+ - :heavy_check_mark: Allow users to toggle walk using a key of their choice (CapsLock by default, configurable)
+ - :heavy_check_mark: When toggle walking is ON, the (held) walk key will cause users to walk at vanilla speed.
 
 ### Compatibility
 
