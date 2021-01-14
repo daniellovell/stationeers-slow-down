@@ -21,6 +21,7 @@ Completed features
  
 ### Installation
 
+ 0. Download the latest release https://github.com/daniellovell/stationeers-slow-down/releases/latest
  1. Install BepInEx to your Stationeers folder in Program Files (x86) https://github.com/BepInEx/BepInEx/releases
  2. Run Stationeers once to complete the BepInEx installation
  3. Install ``SlowDown.dll`` to the Stationeers/BepInEx/plugins folder
