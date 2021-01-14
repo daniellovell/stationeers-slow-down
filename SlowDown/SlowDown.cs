@@ -8,9 +8,12 @@ namespace SlowDown
     public class SlowDown : BaseUnityPlugin
     {
         private ConfigEntry<string> configSlowKey;
+        private ConfigEntry<string> configToggleSlowKey;
         private ConfigEntry<float> configSlowedSpeed;
 
+
         public static string SlowKey;
+        public static string ToggleSlowKey;
         public static float SlowedSpeed;
 
         public static void ModLog(string text)
@@ -35,9 +38,16 @@ namespace SlowDown
             configSlowKey = Config.Bind("General",   // The section under which the option is shown
                                      "SlowKeyCode",  // The key of the configuration option in the configuration file
                                      "LeftControl", // The default value
-                                     "The key to use to slow down - https://docs.unity3d.com/ScriptReference/KeyCode.html"); // Description of the option to show in the config file
+                                     "The key to use to HOLD to slow down - https://docs.unity3d.com/ScriptReference/KeyCode.html"); // Description of the option to show in the config file
 
             SlowKey = configSlowKey.Value;
+
+            configToggleSlowKey = Config.Bind("General",   // The section under which the option is shown
+                                     "ToggleSlowKeyCode",  // The key of the configuration option in the configuration file
+                                     "CapsLock", // The default value
+                                     "The key to use to TOGGLE to slow down - https://docs.unity3d.com/ScriptReference/KeyCode.html"); // Description of the option to show in the config file
+
+            ToggleSlowKey = configToggleSlowKey.Value;
 
             configSlowedSpeed = Config.Bind("General",   // The section under which the option is shown
                                      "SlowedSpeed",  // The key of the configuration option in the configuration file

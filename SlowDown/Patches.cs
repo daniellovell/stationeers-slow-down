@@ -25,17 +25,42 @@ namespace SlowDown
     [HarmonyPatch(typeof(MovementController), "MovementHandler")]
     public class MovementController_MovementHandler
     {
+        private static bool isSlowToggled = false;
+
         static void Prefix(MovementController __instance)
         {
+            if (KeyManager.GetButtonDown((KeyCode)Enum.Parse(typeof(KeyCode), SlowDown.ToggleSlowKey)))
+            {
+                isSlowToggled = !isSlowToggled;
+            }
+
             if (KeyManager.GetButton((KeyCode)Enum.Parse(typeof(KeyCode), SlowDown.SlowKey)))
             {
-                __instance.MovementForce = SlowDown.SlowedSpeed / 20f;
-                __instance.CharacterMaxSpeed = SlowDown.SlowedSpeed;
+                if (isSlowToggled)
+                {
+                    __instance.MovementForce = 0.2f;
+                    __instance.CharacterMaxSpeed = 4f;
+                }
+                else
+                {
+                    __instance.MovementForce = SlowDown.SlowedSpeed / 10f;
+                    __instance.CharacterMaxSpeed = SlowDown.SlowedSpeed;
+                }
+                
             }
             else
             {
-                __instance.MovementForce = 0.2f;
-                __instance.CharacterMaxSpeed = 4f;
+                if(isSlowToggled)
+                {
+                    __instance.MovementForce = SlowDown.SlowedSpeed / 10f;
+                    __instance.CharacterMaxSpeed = SlowDown.SlowedSpeed;
+                }
+                else
+                {
+                    __instance.MovementForce = 0.2f;
+                    __instance.CharacterMaxSpeed = 4f;
+                }
+                
             }
         }
     }
