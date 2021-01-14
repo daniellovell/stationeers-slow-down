@@ -4,7 +4,7 @@ using BepInEx.Configuration;
 
 namespace SlowDown
 {
-    [BepInPlugin("SlowDown", "Slow Down Mod", "1.0.0.0")]
+    [BepInPlugin("SlowDown", "Slow Down Mod", "1.1.0.0")]
     public class SlowDown : BaseUnityPlugin
     {
         private ConfigEntry<string> configSlowKey;
